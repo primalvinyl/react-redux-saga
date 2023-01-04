@@ -2,7 +2,7 @@ import { take, put, call } from 'redux-saga/effects';
 import { createAction } from '@reduxjs/toolkit';
 import { putBooks } from './reducers';
 import { booksStoreDefault } from './types';
-import apiRequest from '../apiRequest';
+import serviceApi from '../serviceApi';
 
 // action creator
 export const getBooks = createAction('books/getBooks');
@@ -14,7 +14,7 @@ export function* getBooksWorker(): Generator {
         yield put(putBooks({ ...booksStoreDefault, status: 'loading' }));
         
         // make request
-        const response = yield call(apiRequest, '/api/books');
+        const response = yield call(serviceApi, '/api/books');
 
         // resolve request
         yield put(putBooks({ ...response as Object, status: 'success' }));

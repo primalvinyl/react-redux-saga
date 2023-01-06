@@ -26,6 +26,9 @@ module.exports = (env, argv) => {
         },
         target: 'web',
         mode: mode,
+        devServer: {
+            port: 3000,
+        },
         resolve: {
             extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
         },
@@ -49,6 +52,7 @@ module.exports = (env, argv) => {
         plugins: [
             new HtmlWebpackPlugin({
                 template: path.resolve(__dirname, 'src', 'index.html'),
+                favicon: path.resolve(__dirname, 'src', 'images', 'favicon.png'),
             }),
             new webpack.DefinePlugin(formattedVars),
         ],

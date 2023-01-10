@@ -2,24 +2,24 @@ import * as reducers from './reducers';
 import * as sagas from './sagas';
 import * as mocks from './mocks';
 
-describe('getBooks', () => {
+describe('getBookList', () => {
     it('returns an action object', () => {
         const expectedResult = {
-            type: sagas.getBooks.toString(),
+            type: sagas.getBookList.toString(),
             payload: undefined,
         };
-        const actualResult = sagas.getBooks();
+        const actualResult = sagas.getBookList();
         expect(actualResult).toEqual(expectedResult);
     });
 });
 
-describe('putBooks', () => {
+describe('putBookList', () => {
     it('returns an action object', () => {
         const expectedResult = {
-            type: reducers.putBooks.toString(),
-            payload: mocks.booksStoreMock,
+            type: reducers.putBookList.toString(),
+            payload: mocks.bookListStoreMock,
         };
-        const actualResult = reducers.putBooks(mocks.booksStoreMock);
+        const actualResult = reducers.putBookList(mocks.bookListStoreMock);
         expect(actualResult).toEqual(expectedResult);
     });
 });

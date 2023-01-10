@@ -1,13 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { booksStoreDefault } from './types';
+import { bookListStoreDefault } from './types';
 
-const books = createSlice({
-    name: 'books',
-    initialState: booksStoreDefault,
+const bookList = createSlice({
+    name: 'bookList',
+    initialState: bookListStoreDefault,
     reducers: {
-        putBooks: (state, action) => ({ ...state, ...action.payload }),
+        putBookList: (state, action) => ({ ...state, ...action.payload }),
     }
 });
 
-export const { putBooks } = books.actions;
-export const booksReducer = books.reducer;
+export const { putBookList } = bookList.actions;
+export const bookListReducer = bookList.reducer;

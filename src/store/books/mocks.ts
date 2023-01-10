@@ -1,13 +1,13 @@
 import * as types from './types';
 
-export const booksResponseMock: types.BooksResponseType = {
+export const bookListResponseMock: types.BookListResponseType = {
     list: [{
         title: 'Moby Dick',
         author: 'Herman Melville',
     }],
 };
 
-export const booksStoreMock: types.BooksStoreType = {
+export const bookListStoreMock: types.BookListStoreType = {
     list: [{
         title: 'Moby Dick',
         author: 'Herman Melville',

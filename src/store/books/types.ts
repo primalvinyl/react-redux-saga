@@ -3,16 +3,16 @@ export interface BookType {
     author: string;
 }
 
-export interface BooksResponseType {
+export interface BookListResponseType {
     list: Array<BookType>;
 }
 
-export interface BooksStoreType {
+export interface BookListStoreType {
     list: Array<BookType>;
     status: 'idle' | 'loading' | 'success' | 'failed';
 }
 
-export const booksStoreDefault: BooksStoreType = {
+export const bookListStoreDefault: BookListStoreType = {
     list: [],
     status: 'idle',
 };

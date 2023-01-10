@@ -3,11 +3,11 @@ import * as types from './types';
 import * as mocks from './mocks';
 
 describe('books reducer', () => {
-    it('should put new books list', () => {
-        const response = reducers.booksReducer(
+    it('should put new book list', () => {
+        const response = reducers.bookListReducer(
             undefined,
-            reducers.putBooks(mocks.booksStoreMock)
+            reducers.putBookList(mocks.bookListStoreMock)
         );
-        expect(response).toEqual(mocks.booksStoreMock);
+        expect(response).toEqual(mocks.bookListStoreMock);
     });
 });

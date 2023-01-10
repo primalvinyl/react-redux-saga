@@ -3,8 +3,8 @@ import './App.css';
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
+        <div className="root">
+            <header>
                 <h1>React Application</h1>
             </header>
             <main>

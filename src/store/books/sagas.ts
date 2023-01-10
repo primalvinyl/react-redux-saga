@@ -1,33 +1,31 @@
 import { take, put, call } from 'redux-saga/effects';
 import { createAction } from '@reduxjs/toolkit';
-import { putBooks } from './reducers';
-import { booksStoreDefault } from './types';
+import { putBookList } from './reducers';
+import { bookListStoreDefault } from './types';
 import serviceApi from '../serviceApi';
 
-// action creator
-export const getBooks = createAction('books/getBooks');
+// get book list
+export const getBookList = createAction('books/getBookList');
 
-// worker
-export function* getBooksWorker(): Generator {
+export function* getBookListWorker(): Generator {
     try {
         // start request
-        yield put(putBooks({ ...booksStoreDefault, status: 'loading' }));
+        yield put(putBookList({ ...bookListStoreDefault, status: 'loading' }));
         
         // make request
         const response = yield call(serviceApi, '/api/books');
 
         // resolve request
-        yield put(putBooks({ ...response as Object, status: 'success' }));
+        yield put(putBookList({ ...response as Object, status: 'success' }));
         
     } catch (error) {
-        yield put(putBooks({ ...booksStoreDefault, status: 'failed' }));
+        yield put(putBookList({ ...bookListStoreDefault, status: 'failed' }));
     }
 }
 
-// watcher 
-export function* getBooksWatcher() {
+export function* getBookListWatcher() {
     while(true){
-        yield take(getBooks.toString());
-        yield call(getBooksWorker);
+        yield take(getBookList.toString());
+        yield call(getBookListWorker);
     }
 }

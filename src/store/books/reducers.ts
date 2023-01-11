@@ -5,7 +5,10 @@ const bookList = createSlice({
     name: 'bookList',
     initialState: bookListStoreDefault,
     reducers: {
-        putBookList: (state, action) => ({ ...state, ...action.payload }),
+        putBookList: (state, { payload }) => ({
+            ...state,
+            ...payload,
+        }),
     }
 });
 

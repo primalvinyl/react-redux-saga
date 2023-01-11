@@ -3,6 +3,14 @@ import * as types from './types';
 import * as mocks from './mocks';
 
 describe('books reducer', () => {
+    it('should handle initial state', () => {
+        const response = reducers.bookListReducer(
+            undefined,
+            { type: undefined }
+        );
+        expect(response).toEqual(types.bookListStoreDefault);
+    });
+
     it('should put new book list', () => {
         const response = reducers.bookListReducer(
             undefined,

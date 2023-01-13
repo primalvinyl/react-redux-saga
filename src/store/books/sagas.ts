@@ -8,10 +8,10 @@ import serviceApi from '../serviceApi';
 export const getBookList = createAction('books/getBookList');
 
 export function* getBookListWorker(): Generator {
+    // start request
+    yield put(putBookList({ ...bookListStoreDefault, status: 'loading' }));
+
     try {
-        // start request
-        yield put(putBookList({ ...bookListStoreDefault, status: 'loading' }));
-        
         // make request
         const response = yield call(serviceApi, '/api/books');
 

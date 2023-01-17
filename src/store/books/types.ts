@@ -3,6 +3,10 @@ export interface BookType {
     author: string;
 }
 
+export interface BookListRequestType {
+    query: string;
+}
+
 export interface BookListResponseType {
     list: Array<BookType>;
 }
@@ -16,3 +20,8 @@ export const bookListStoreDefault: BookListStoreType = {
     list: [],
     status: 'idle',
 };
+
+export interface BookListActionType {
+    type: string;
+    payload: BookListRequestType;
+}

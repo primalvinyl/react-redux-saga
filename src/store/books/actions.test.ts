@@ -6,9 +6,9 @@ describe('getBookList', () => {
     it('returns an action object', () => {
         const expectedResult = {
             type: sagas.getBookList.toString(),
-            payload: undefined,
+            payload: { query: 'test' },
         };
-        const actualResult = sagas.getBookList();
+        const actualResult = sagas.getBookList({ query: 'test' });
         expect(actualResult).toEqual(expectedResult);
     });
 });

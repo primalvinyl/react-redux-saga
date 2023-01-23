@@ -3,7 +3,7 @@ import * as types from './types';
 import * as mocks from './mocks';
 
 describe('books reducer', () => {
-    it('should handle initial state', () => {
+    it('should handle unknown action', () => {
         const response = reducers.bookListReducer(
             undefined,
             { type: undefined }
